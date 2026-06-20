@@ -5,588 +5,556 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tati Face Charts — 50 Fichas de Rosto para Maquiadoras</title>
 <meta name="description" content="Pack com 50 face charts realistas para maquiadoras profissionais e estudantes de make. Download imediato. Criado por ilustradora com +10 anos no mercado beauty.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-
 <style>
-  :root {
-    --blush: #F2C4CE;
-    --blush-deep: #D9899A;
-    --nude: #EDE0D4;
-    --nude-dark: #D9C9B8;
-    --gold: #B8975A;
-    --gold-light: #D4B07A;
-    --warm-white: #FAF7F4;
-    --soft-black: #1E1714;
-    --charcoal: #3A2E2A;
-    --muted: #8A7A72;
-    --muted-light: #C4B4AC;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--warm-white);
-    color: var(--soft-black);
-    font-size: 15px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    background: var(--soft-black);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 24px 80px;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 20% 80%, rgba(242,196,206,0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 40% at 80% 20%, rgba(184,151,90,0.10) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .hero-eyebrow {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.1s forwards;
-  }
-
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(40px, 9vw, 72px);
-    font-weight: 300;
-    color: var(--warm-white);
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    margin-bottom: 8px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.2s forwards;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--blush);
-  }
-
-  .hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(18px, 4vw, 26px);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--muted-light);
-    margin-bottom: 32px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.3s forwards;
-  }
-
-  .hero-desc {
-    font-size: 14px;
-    color: var(--muted-light);
-    max-width: 380px;
-    line-height: 1.8;
-    margin: 0 auto 40px;
-    font-weight: 300;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.4s forwards;
-  }
-
-  .hero-cta {
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.5s forwards;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .btn-primary {
-    display: inline-block;
-    background: var(--blush);
-    color: var(--soft-black);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 16px 40px;
-    border-radius: 2px;
-    transition: background 0.2s, transform 0.15s;
-  }
-
-  .btn-primary:hover {
-    background: var(--blush-deep);
-    color: #fff;
-    transform: translateY(-1px);
-  }
-
-  .price-badge {
-    font-size: 12px;
-    color: var(--muted-light);
-    font-weight: 300;
-  }
-
-  .price-badge strong {
-    color: var(--gold-light);
-    font-size: 15px;
-    font-weight: 500;
-  }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.9s forwards;
-  }
-
-  .hero-scroll span {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  .scroll-line {
-    width: 1px;
-    height: 32px;
-    background: linear-gradient(to bottom, var(--muted), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
-
-  /* ── CREDENCIAL STRIP ── */
-  .strip {
-    background: var(--nude);
-    padding: 18px 24px;
-    text-align: center;
-    border-bottom: 1px solid var(--nude-dark);
-  }
-
-  .strip p {
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-  }
-
-  .strip strong {
-    color: var(--charcoal);
-    font-weight: 500;
-  }
-
-  /* ── SECTIONS ── */
-  section {
-    padding: 72px 24px;
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
-  .section-eyebrow {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 6vw, 42px);
-    font-weight: 300;
-    color: var(--soft-black);
-    line-height: 1.15;
-    margin-bottom: 20px;
-  }
-
-  .section-title em { font-style: italic; color: var(--blush-deep); }
-
-  .section-body {
-    font-size: 14px;
-    color: var(--charcoal);
-    line-height: 1.85;
-    font-weight: 300;
-  }
-
-  /* ── PARA QUEM É ── */
-  .for-who {
-    background: var(--soft-black);
-    padding: 72px 24px;
-  }
-
-  .for-who-inner {
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
-  .for-who .section-eyebrow { color: var(--gold-light); }
-  .for-who .section-title { color: var(--warm-white); }
-
-  .audience-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 28px;
-  }
-
-  @media (max-width: 480px) {
-    .audience-grid { grid-template-columns: 1fr; }
-  }
-
-  .audience-item {
-    border: 1px solid rgba(242,196,206,0.2);
-    border-radius: 4px;
-    padding: 18px 16px;
-  }
-
-  .audience-item .icon {
-    font-size: 20px;
-    margin-bottom: 8px;
-    display: block;
-  }
-
-  .audience-item p {
-    font-size: 13px;
-    color: var(--muted-light);
-    line-height: 1.6;
-    font-weight: 300;
-  }
-
-  .audience-item strong {
-    display: block;
-    font-size: 14px;
-    color: var(--warm-white);
-    font-weight: 500;
-    margin-bottom: 4px;
-  }
-
-  /* ── O QUE VEM NO PACK ── */
-  .pack-list {
-    margin-top: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .pack-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--nude-dark);
-  }
-
-  .pack-item:last-child { border-bottom: none; }
-
-  .pack-check {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--blush);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    flex-shrink: 0;
-    margin-top: 1px;
-    color: var(--soft-black);
-  }
-
-  .pack-item p {
-    font-size: 14px;
-    color: var(--charcoal);
-    line-height: 1.6;
-    font-weight: 300;
-  }
-
-  .pack-item strong {
-    color: var(--soft-black);
-    font-weight: 500;
-  }
-
-  /* ── SOBRE A CRIADORA ── */
-  .about {
-    background: var(--nude);
-    padding: 72px 24px;
-    border-top: 1px solid var(--nude-dark);
-    border-bottom: 1px solid var(--nude-dark);
-  }
-
-  .about-inner {
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
-  .brand-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 20px;
-  }
-
-  .brand-tag {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--charcoal);
-    border: 1px solid var(--nude-dark);
-    padding: 5px 12px;
-    border-radius: 2px;
-    background: #fff;
-  }
-
-  /* ── CTA FINAL ── */
-  .cta-final {
-    background: var(--soft-black);
-    padding: 80px 24px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-final::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(242,196,206,0.10) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .cta-final .section-eyebrow { color: var(--gold-light); margin-bottom: 16px; }
-
-  .cta-price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 12vw, 80px);
-    font-weight: 300;
-    color: var(--warm-white);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .cta-price-label {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 32px;
-    font-weight: 300;
-  }
-
-  .cta-final .btn-primary {
-    font-size: 12px;
-    padding: 18px 48px;
-    letter-spacing: 0.12em;
-  }
-
-  .cta-reassure {
-    margin-top: 20px;
-    font-size: 11px;
-    color: var(--muted);
-    line-height: 1.8;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--soft-black);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 24px;
-    text-align: center;
-  }
-
-  footer p {
-    font-size: 11px;
-    color: var(--muted);
-    line-height: 1.8;
-  }
-
-  footer a {
-    color: var(--blush);
-    text-decoration: none;
-  }
-
-  /* ── DIVIDER ── */
-  .divider {
-    width: 40px;
-    height: 1px;
-    background: var(--blush-deep);
-    margin: 20px 0;
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.4; }
-    50%       { opacity: 1; }
-  }
+:root {
+--blush: #F2C4CE;
+--blush-deep: #D9899A;
+--nude: #EDE0D4;
+--nude-dark: #D9C9B8;
+--gold: #B8975A;
+--gold-light: #D4B07A;
+--warm-white: #FAF7F4;
+--soft-black: #1E1714;
+--charcoal: #3A2E2A;
+--muted: #8A7A72;
+--muted-light: #C4B4AC;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+font-family: 'DM Sans', sans-serif;
+background: var(--warm-white);
+color: var(--soft-black);
+font-size: 15px;
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
+}
+/* ── HERO ── */
+.hero {
+background: var(--soft-black);
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 60px 24px 80px;
+position: relative;
+overflow: hidden;
+text-align: center;
+}
+.hero::before {
+content: '';
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse 60% 50% at 20% 80%, rgba(242,196,206,0.12) 0%, transparent 60%),
+radial-gradient(ellipse 40% 40% at 80% 20%, rgba(184,151,90,0.10) 0%, transparent 60%);
+pointer-events: none;
+}
+.hero-eyebrow {
+font-size: 10px;
+font-weight: 500;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(--gold-light);
+margin-bottom: 20px;
+opacity: 0;
+animation: fadeUp 0.6s ease 0.1s forwards;
+}
+.hero-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: clamp(40px, 9vw, 72px);
+font-weight: 300;
+color: var(--warm-white);
+line-height: 1.05;
+letter-spacing: -0.01em;
+margin-bottom: 8px;
+opacity: 0;
+animation: fadeUp 0.7s ease 0.2s forwards;
+}
+.hero-title em {
+font-style: italic;
+color: var(--blush);
+}
+.hero-subtitle {
+font-family: 'Cormorant Garamond', serif;
+font-size: clamp(18px, 4vw, 26px);
+font-weight: 300;
+font-style: italic;
+color: var(--muted-light);
+margin-bottom: 32px;
+opacity: 0;
+animation: fadeUp 0.7s ease 0.3s forwards;
+}
+.hero-desc {
+font-size: 14px;
+color: var(--muted-light);
+max-width: 380px;
+line-height: 1.8;
+margin: 0 auto 40px;
+font-weight: 300;
+opacity: 0;
+animation: fadeUp 0.7s ease 0.4s forwards;
+}
+.hero-cta {
+opacity: 0;
+animation: fadeUp 0.7s ease 0.5s forwards;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 12px;
+}
+.btn-primary {
+display: inline-block;
+background: var(--blush);
+color: var(--soft-black);
+font-size: 13px;
+font-weight: 500;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+text-decoration: none;
+padding: 16px 40px;
+border-radius: 2px;
+transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover {
+background: var(--blush-deep);
+color: #fff;
+transform: translateY(-1px);
+}
+.price-badge {
+font-size: 12px;
+color: var(--muted-light);
+font-weight: 300;
+}
+.price-badge strong {
+color: var(--gold-light);
+font-size: 15px;
+font-weight: 500;
+}
+.hero-scroll {
+position: absolute;
+bottom: 28px;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 6px;
+opacity: 0;
+animation: fadeUp 0.7s ease 0.9s forwards;
+}
+.hero-scroll span {
+font-size: 9px;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(--muted);
+}
+.scroll-line {
+width: 1px;
+height: 32px;
+background: linear-gradient(to bottom, var(--muted), transparent);
+animation: scrollPulse 2s ease-in-out infinite;
+}
+/* ── CREDENCIAL STRIP ── */
+.strip {
+background: var(--nude);
+padding: 18px 24px;
+text-align: center;
+border-bottom: 1px solid var(--nude-dark);
+}
+.strip p {
+font-size: 12px;
+color: var(--muted);
+letter-spacing: 0.05em;
+}
+.strip strong {
+color: var(--charcoal);
+font-weight: 500;
+}
+/* ── SHOWCASE ── */
+.showcase {
+padding: 56px 24px 72px;
+max-width: 720px;
+margin: 0 auto;
+text-align: center;
+}
+.showcase img {
+width: 100%;
+max-width: 480px;
+border-radius: 6px;
+box-shadow: 0 24px 60px -20px rgba(30,23,20,0.35);
+}
+.showcase-caption {
+margin-top: 16px;
+font-size: 11px;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(--muted);
+}
+/* ── SECTIONS ── */
+section {
+padding: 72px 24px;
+max-width: 680px;
+margin: 0 auto;
+}
+.section-eyebrow {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(--gold);
+margin-bottom: 12px;
+}
+.section-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: clamp(28px, 6vw, 42px);
+font-weight: 300;
+color: var(--soft-black);
+line-height: 1.15;
+margin-bottom: 20px;
+}
+.section-title em { font-style: italic; color: var(--blush-deep); }
+.section-body {
+font-size: 14px;
+color: var(--charcoal);
+line-height: 1.85;
+font-weight: 300;
+}
+/* ── PARA QUEM É ── */
+.for-who {
+background: var(--soft-black);
+padding: 72px 24px;
+}
+.for-who-inner {
+max-width: 680px;
+margin: 0 auto;
+}
+.for-who .section-eyebrow { color: var(--gold-light); }
+.for-who .section-title { color: var(--warm-white); }
+.audience-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+margin-top: 28px;
+}
+@media (max-width: 480px) {
+.audience-grid { grid-template-columns: 1fr; }
+}
+.audience-item {
+border: 1px solid rgba(242,196,206,0.2);
+border-radius: 4px;
+padding: 18px 16px;
+}
+.audience-item .icon {
+font-size: 20px;
+margin-bottom: 8px;
+display: block;
+}
+.audience-item p {
+font-size: 13px;
+color: var(--muted-light);
+line-height: 1.6;
+font-weight: 300;
+}
+.audience-item strong {
+display: block;
+font-size: 14px;
+color: var(--warm-white);
+font-weight: 500;
+margin-bottom: 4px;
+}
+/* ── O QUE VEM NO PACK ── */
+.pack-list {
+margin-top: 28px;
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+.pack-item {
+display: flex;
+align-items: flex-start;
+gap: 14px;
+padding-bottom: 16px;
+border-bottom: 1px solid var(--nude-dark);
+}
+.pack-item:last-child { border-bottom: none; }
+.pack-check {
+width: 22px;
+height: 22px;
+border-radius: 50%;
+background: var(--blush);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 11px;
+flex-shrink: 0;
+margin-top: 1px;
+color: var(--soft-black);
+}
+.pack-item p {
+font-size: 14px;
+color: var(--charcoal);
+line-height: 1.6;
+font-weight: 300;
+}
+.pack-item strong {
+color: var(--soft-black);
+font-weight: 500;
+}
+/* ── SOBRE A CRIADORA ── */
+.about {
+background: var(--nude);
+padding: 72px 24px;
+border-top: 1px solid var(--nude-dark);
+border-bottom: 1px solid var(--nude-dark);
+}
+.about-inner {
+max-width: 680px;
+margin: 0 auto;
+}
+.brand-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 20px;
+}
+.brand-tag {
+font-size: 10px;
+font-weight: 500;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(--charcoal);
+border: 1px solid var(--nude-dark);
+padding: 5px 12px;
+border-radius: 2px;
+background: #fff;
+}
+/* ── CTA FINAL ── */
+.cta-final {
+background: var(--soft-black);
+padding: 80px 24px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.cta-final::before {
+content: '';
+position: absolute;
+inset: 0;
+background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(242,196,206,0.10) 0%, transparent 70%);
+pointer-events: none;
+}
+.cta-final .section-eyebrow { color: var(--gold-light); margin-bottom: 16px; }
+.cta-price {
+font-family: 'Cormorant Garamond', serif;
+font-size: clamp(48px, 12vw, 80px);
+font-weight: 300;
+color: var(--warm-white);
+line-height: 1;
+margin-bottom: 4px;
+}
+.cta-price-label {
+font-size: 12px;
+color: var(--muted);
+margin-bottom: 32px;
+font-weight: 300;
+}
+.cta-final .btn-primary {
+font-size: 12px;
+padding: 18px 48px;
+letter-spacing: 0.12em;
+}
+.cta-reassure {
+margin-top: 20px;
+font-size: 11px;
+color: var(--muted);
+line-height: 1.8;
+}
+/* ── FOOTER ── */
+footer {
+background: var(--soft-black);
+border-top: 1px solid rgba(255,255,255,0.06);
+padding: 24px;
+text-align: center;
+}
+footer p {
+font-size: 11px;
+color: var(--muted);
+line-height: 1.8;
+}
+footer a {
+color: var(--blush);
+text-decoration: none;
+}
+/* ── DIVIDER ── */
+.divider {
+width: 40px;
+height: 1px;
+background: var(--blush-deep);
+margin: 20px 0;
+}
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(16px); }
+to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollPulse {
+0%, 100% { opacity: 0.4; }
+50% { opacity: 1; }
+}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">Blush & Business · Tati Face Charts</div>
-  <h1 class="hero-title">50 Face Charts<br><em>prontas para usar</em></h1>
-  <p class="hero-subtitle">para maquiadoras que levam o trabalho a sério</p>
-  <p class="hero-desc">
-    Pack digital com 50 fichas de rosto de traço realista — diversas, prontas para imprimir e usar hoje mesmo com suas clientes.
-  </p>
-  <div class="hero-cta">
-    <a href="https://tatiface.gumroad.com/l/hubhqj" class="btn-primary" target="_blank">
-      Quero meu pack agora
-    </a>
-    <div class="price-badge">Download imediato · <strong>R$ 37</strong> · Pagamento seguro</div>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Ver mais</span>
-  </div>
+<div class="hero-eyebrow">Blush & Business · Tati Face Charts</div>
+<h1 class="hero-title">50 Face Charts<br><em>prontas para usar</em></h1>
+<p class="hero-subtitle">para maquiadoras que levam o trabalho a sério</p>
+<p class="hero-desc">
+Pack digital com 50 fichas de rosto de traço realista — diversas, prontas para imprimir e usar hoje mesmo com suas clientes.
+</p>
+<div class="hero-cta">
+<a href="https://tatiface.gumroad.com/l/hubhqj" class="btn-primary" target="_blank">
+Quero meu pack agora
+</a>
+<div class="price-badge">Download imediato · <strong>R$ 37</strong> · Pagamento seguro</div>
+</div>
+<div class="hero-scroll">
+<div class="scroll-line"></div>
+<span>Ver mais</span>
+</div>
 </section>
 
 <!-- STRIP -->
 <div class="strip">
-  <p>Criado por <strong>Tatiana</strong> — ilustradora com <strong>+10 anos no mercado beauty</strong> · Trabalhos para <strong>Mary Kay · O Boticário · Dallas</strong></p>
+<p>Criado por <strong>Tatiana</strong> — ilustradora com <strong>+10 anos no mercado beauty</strong> · Trabalhos para <strong>Mary Kay · O Boticário · Daillus</strong></p>
+</div>
+
+<!-- SHOWCASE -->
+<div class="showcase">
+<img src="mockup-50-face-charts.jpg" alt="Pack 50 Face Charts — Tati Face Charts by Blush & Business">
+<p class="showcase-caption">Coleção I · 2026 — pronta para download</p>
 </div>
 
 <!-- O PROBLEMA -->
 <section>
-  <div class="section-eyebrow">Por que face charts</div>
-  <h2 class="section-title">Você já criou uma<br>maquiagem incrível —<br><em>e não conseguiu repetir?</em></h2>
-  <div class="divider"></div>
-  <p class="section-body">
-    Toda maquiadora profissional conhece essa frustração. A cliente adorou, você adorou — mas na próxima sessão, faltou aquela anotação, aquele detalhe, aquele produto exato que fez a diferença.<br><br>
-    Face charts existem para isso: documentar, planejar e reproduzir maquiagens com precisão. São a partitura do seu trabalho.<br><br>
-    O problema é que a maioria das fichas disponíveis é genérica demais — rostos que não parecem com suas clientes reais, sem espaço para anotação, sem diversidade.<br><br>
-    O Tati Face Charts foi criado para resolver exatamente isso.
-  </p>
+<div class="section-eyebrow">Por que face charts</div>
+<h2 class="section-title">Você já criou uma<br>maquiagem incrível —<br><em>e não conseguiu repetir?</em></h2>
+<div class="divider"></div>
+<p class="section-body">
+Toda maquiadora profissional conhece essa frustração. A cliente adorou, você adorou — mas na próxima sessão, faltou aquela anotação, aquele detalhe, aquele produto exato que fez a diferença.<br><br>
+Face charts existem para isso: documentar, planejar e reproduzir maquiagens com precisão. São a partitura do seu trabalho.<br><br>
+O problema é que a maioria das fichas disponíveis é genérica demais — rostos que não parecem com suas clientes reais, sem espaço para anotação, sem diversidade.<br><br>
+O Tati Face Charts foi criado para resolver exatamente isso.
+</p>
 </section>
 
 <!-- PARA QUEM É -->
 <div class="for-who">
-  <div class="for-who-inner">
-    <div class="section-eyebrow">Para quem é</div>
-    <h2 class="section-title" style="color:var(--warm-white)">Este pack é <em>para você</em><br>se você é…</h2>
-    <div class="audience-grid">
-      <div class="audience-item">
-        <span class="icon">💄</span>
-        <strong>Maquiadora profissional</strong>
-        <p>Que quer organizar seu portfólio e reproduzir looks com exatidão</p>
-      </div>
-      <div class="audience-item">
-        <span class="icon">🎓</span>
-        <strong>Estudante de make</strong>
-        <p>Que quer estudar técnicas de cor, contorno e sombra com mais foco</p>
-      </div>
-      <div class="audience-item">
-        <span class="icon">📱</span>
-        <strong>Criadora de conteúdo</strong>
-        <p>Que precisa de referências visuais diversas para seus tutoriais</p>
-      </div>
-      <div class="audience-item">
-        <span class="icon">✨</span>
-        <strong>Apaixonada por beleza</strong>
-        <p>Que quer planejar looks antes de aplicar e registrar o que funciona</p>
-      </div>
-    </div>
-  </div>
+<div class="for-who-inner">
+<div class="section-eyebrow">Para quem é</div>
+<h2 class="section-title" style="color:var(--warm-white)">Este pack é <em>para você</em><br>se você é…</h2>
+<div class="audience-grid">
+<div class="audience-item">
+<span class="icon">💄</span>
+<strong>Maquiadora profissional</strong>
+<p>Que quer organizar seu portfólio e reproduzir looks com exatidão</p>
+</div>
+<div class="audience-item">
+<span class="icon">🎓</span>
+<strong>Estudante de make</strong>
+<p>Que quer estudar técnicas de cor, contorno e sombra com mais foco</p>
+</div>
+<div class="audience-item">
+<span class="icon">📱</span>
+<strong>Criadora de conteúdo</strong>
+<p>Que precisa de referências visuais diversas para seus tutoriais</p>
+</div>
+<div class="audience-item">
+<span class="icon">✨</span>
+<strong>Apaixonada por beleza</strong>
+<p>Que quer planejar looks antes de aplicar e registrar o que funciona</p>
+</div>
+</div>
+</div>
 </div>
 
 <!-- O QUE VEM -->
 <section>
-  <div class="section-eyebrow">O que está incluído</div>
-  <h2 class="section-title">Tudo que você<br><em>precisa no pack</em></h2>
-  <div class="divider"></div>
-  <div class="pack-list">
-    <div class="pack-item">
-      <div class="pack-check">✓</div>
-      <p><strong>50 fichas de rosto</strong> — traço realista em grafite, prontas para imprimir em qualquer papel</p>
-    </div>
-    <div class="pack-item">
-      <div class="pack-check">✓</div>
-      <p><strong>Rostos diversos</strong> — masculino, asiático, cabelos cacheados, diferentes formatos de olho, nariz e boca</p>
-    </div>
-    <div class="pack-item">
-      <div class="pack-check">✓</div>
-      <p><strong>Espaço para anotações</strong> — registre produtos, técnicas e observações em cada ficha</p>
-    </div>
-    <div class="pack-item">
-      <div class="pack-check">✓</div>
-      <p><strong>Download imediato</strong> — arquivo PDF de alta resolução, disponível na hora do pagamento</p>
-    </div>
-    <div class="pack-item">
-      <div class="pack-check">✓</div>
-      <p><strong>Uso ilimitado</strong> — imprima quantas vezes precisar, para sempre</p>
-    </div>
-  </div>
+<div class="section-eyebrow">O que está incluído</div>
+<h2 class="section-title">Tudo que você<br><em>precisa no pack</em></h2>
+<div class="divider"></div>
+<div class="pack-list">
+<div class="pack-item">
+<div class="pack-check">✓</div>
+<p><strong>50 fichas de rosto</strong> — traço realista em grafite, prontas para imprimir em qualquer papel</p>
+</div>
+<div class="pack-item">
+<div class="pack-check">✓</div>
+<p><strong>Rostos diversos</strong> — masculino, asiático, cabelos cacheados, diferentes formatos de olho, nariz e boca</p>
+</div>
+<div class="pack-item">
+<div class="pack-check">✓</div>
+<p><strong>Espaço para anotações</strong> — registre produtos, técnicas e observações em cada ficha</p>
+</div>
+<div class="pack-item">
+<div class="pack-check">✓</div>
+<p><strong>Download imediato</strong> — arquivo PDF de alta resolução, disponível na hora do pagamento</p>
+</div>
+<div class="pack-item">
+<div class="pack-check">✓</div>
+<p><strong>Uso ilimitado</strong> — imprima quantas vezes precisar, para sempre</p>
+</div>
+</div>
 </section>
 
 <!-- SOBRE -->
 <div class="about">
-  <div class="about-inner">
-    <div class="section-eyebrow">Quem criou</div>
-    <h2 class="section-title">Feito por quem<br><em>vive o mercado beauty</em></h2>
-    <div class="divider"></div>
-    <p class="section-body">
-      Sou Tatiana, ilustradora com mais de 10 anos no mercado beauty brasileiro. Desde 2014 crio fichas de rosto usadas por maquiadoras, bloggers e influenciadoras em todo o Brasil.<br><br>
-      Já desenvolvi materiais ilustrados para algumas das maiores marcas de beleza do país — e cada traço do Tati Face Charts carrega essa experiência.
-    </p>
-    <div class="brand-tags">
-      <span class="brand-tag">Mary Kay</span>
-      <span class="brand-tag">O Boticário</span>
-      <span class="brand-tag">Dallas</span>
-      <span class="brand-tag">+10 anos no mercado</span>
-      <span class="brand-tag">Desde 2014</span>
-    </div>
-  </div>
+<div class="about-inner">
+<div class="section-eyebrow">Quem criou</div>
+<h2 class="section-title">Feito por quem<br><em>vive o mercado beauty</em></h2>
+<div class="divider"></div>
+<p class="section-body">
+Sou Tatiana, ilustradora com mais de 10 anos no mercado beauty brasileiro. Desde 2014 crio fichas de rosto usadas por maquiadoras, bloggers e influenciadoras em todo o Brasil.<br><br>
+Já desenvolvi materiais ilustrados para algumas das maiores marcas de beleza do país — e cada traço do Tati Face Charts carrega essa experiência.
+</p>
+<div class="brand-tags">
+<span class="brand-tag">Mary Kay</span>
+<span class="brand-tag">O Boticário</span>
+<span class="brand-tag">Daillus</span>
+<span class="brand-tag">Bruna Tavares</span>
+<span class="brand-tag">Tracta</span>
+<span class="brand-tag">+10 anos no mercado</span>
+<span class="brand-tag">Desde 2014</span>
+</div>
+</div>
 </div>
 
 <!-- CTA FINAL -->
 <div class="cta-final">
-  <div class="section-eyebrow">Pronta para começar?</div>
-  <div class="cta-price">R$ 37</div>
-  <div class="cta-price-label">pagamento único · download imediato · uso ilimitado</div>
-  <a href="https://tatiface.gumroad.com/l/hubhqj" class="btn-primary" target="_blank">
-    Quero meu pack agora
-  </a>
-  <div class="cta-reassure">
-    Pagamento seguro via cartão ou Pix<br>
-    Você recebe o link de download na hora<br>
-    Dúvidas? Fala comigo no Instagram
-  </div>
+<div class="section-eyebrow">Pronta para começar?</div>
+<div class="cta-price">R$ 37</div>
+<div class="cta-price-label">pagamento único · download imediato · uso ilimitado</div>
+<a href="https://tatiface.gumroad.com/l/hubhqj" class="btn-primary" target="_blank">
+Quero meu pack agora
+</a>
+<div class="cta-reassure">
+Pagamento seguro via cartão ou Pix<br>
+Você recebe o link de download na hora<br>
+Dúvidas? Fala comigo no Instagram
+</div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <p>
-    © 2025 Blush & Business · Tati Face Charts<br>
-    Criado por Tatiana · <a href="https://tatiface.gumroad.com/l/hubhqj" target="_blank">Comprar agora</a>
-  </p>
+<p>
+© 2025 Blush & Business · Tati Face Charts<br>
+Criado por Tatiana · <a href="https://tatiface.gumroad.com/l/hubhqj" target="_blank">Comprar agora</a>
+</p>
 </footer>
 
 </body>
